@@ -1,7 +1,7 @@
 package dominios;
 
 public class Conta {
-    Cliente titular;
+    public Cliente titular;
 
     private double saldo;
     int agencia;
