@@ -1,14 +1,21 @@
+package dominios;
+
 public class Conta {
     Cliente titular;
-    double saldo;
+
+    private double saldo;
     int agencia;
     int numero;
 
-    void depositar(double valor){
+    public double mostrarSaldo() {
+        return saldo;
+    }
+
+    public void depositar(double valor){
         saldo += valor;
     }
 
-    boolean sacar(double valor){
+    public boolean sacar(double valor){
         if (saldo >= valor) {
             saldo -= valor;
             return true;
@@ -17,7 +24,7 @@ public class Conta {
         }
     }
 
-    void transferir(double valor, Conta contaDestino){
+    public void transferir(double valor, Conta contaDestino){
         boolean conseguiuSacar = this.sacar(valor);
 
         if (conseguiuSacar){
